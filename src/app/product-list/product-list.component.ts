@@ -10,8 +10,8 @@ import { productsDB } from '../products';
 export class ProductListComponent {
   products = productsDB;
 
-  share() {
-    window.alert('The product has been shared!');
+  shareBtnClick(product) {
+    window.alert('The ' + product + ' has been shared!');
   }
 
   onNotify() {
