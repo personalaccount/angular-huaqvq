@@ -30,7 +30,7 @@ export class NavbarComponent implements OnInit {
           window.scrollTo(0, 0);
       }
     });
-    this.location.subscribe((ev:PopStateEvent) => {
+    this.location.subscribe((ev: PopStateEvent) => {
       this.lastPoppedUrl = ev.url;
     });
   }
@@ -38,12 +38,7 @@ export class NavbarComponent implements OnInit {
   isHome() {
     const titlee = this.location.prepareExternalUrl(this.location.path());
 
-    if ( titlee === '#/home' ) {
-      return true;
-    }
-    else {
-      return false;
-    }
+    return titlee === '#/home';
   }
 
   isDocumentation() {
