@@ -1,6 +1,4 @@
-import { Component, OnInit, Inject, Renderer2, ElementRef, ViewChild, HostListener } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { DOCUMENT } from '@angular/common';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,8 +6,6 @@ import { DOCUMENT } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 
-export class AppComponent implements OnInit {
-  ngOnInit() {
+export class AppComponent {
 
-  }
 }
