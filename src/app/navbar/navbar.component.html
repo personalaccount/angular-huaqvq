@@ -1,15 +1,9 @@
 <div style="background: #eee8e8;">
   <mat-toolbar color="primary">
-    <a style="color: white; text-decoration:none" target="_blank" href="">Huaqvq</a>
+    <a style="color: white; text-decoration:none" routerLink="/">Huaqvq</a>
 
-    <button mat-icon-button [mat-menu-trigger-for]="menu">
-      <mat-icon>account_circle</mat-icon>
+    <button mat-icon-button>
+      <mat-icon routerLink="/login">account_circle</mat-icon>
     </button>
   </mat-toolbar>
-
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Profile</button>
-    <button mat-menu-item>Logout</button>
-  </mat-menu>
-
 </div>
