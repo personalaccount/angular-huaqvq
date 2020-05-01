@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule  } from '@angular/platform-browser';
 
 import { LandingComponent } from './landing/landing.component';
-import {LoginComponent} from './login/login.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '',               component: LandingComponent},
