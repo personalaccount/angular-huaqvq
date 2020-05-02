@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NavbarComponent } from './navbar/navbar.component';
 import { LandingComponent } from './landing/landing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
+import { CasesComponent } from './cases/cases.component';
 
 
 @NgModule({
@@ -22,13 +24,16 @@ import { LoginComponent } from './login/login.component';
     LandingComponent,
     LoginComponent,
     DashboardComponent,
+    CasesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
