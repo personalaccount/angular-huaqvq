@@ -15,6 +15,7 @@ import { LandingComponent } from './landing/landing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CasesComponent } from './cases/cases.component';
+import { CaseDetailsComponent } from './case-details/case-details.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { CasesComponent } from './cases/cases.component';
     LoginComponent,
     DashboardComponent,
     CasesComponent,
+    CaseDetailsComponent,
   ],
   imports: [
     BrowserModule,
