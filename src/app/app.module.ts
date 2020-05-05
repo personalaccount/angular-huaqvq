@@ -18,6 +18,7 @@ import { CasesComponent } from './cases/cases.component';
 import { CaseDetailsComponent } from './case-details/case-details.component';
 import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
+import { CasesStatComponent } from './cases-stat/cases-stat.component';
 
 
 @NgModule({
@@ -31,6 +32,7 @@ import { EditCasesComponent } from './edit-cases/edit-cases.component';
     CaseDetailsComponent,
     AddCasesComponent,
     EditCasesComponent,
+    CasesStatComponent,
   ],
   imports: [
     BrowserModule,
