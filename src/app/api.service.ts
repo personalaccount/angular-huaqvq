@@ -33,4 +33,20 @@ export class ApiService {
       return of(result as T);
     };
   }
+
+  getCases(): Observable<CasesComponent[]> {
+    return this.http.get<CasesComponent[]>(`${apiUrl}`).pipe(
+      tap(cases => console.log('fetched cases')),
+      catchError(this.handleError('getCases', []))
+    );
+  }
+
+  getCasesById(id: string): Observable<CasesComponent> {
+    const url = `${apiUrl}/${id}`;
+
+    return this.http.get<CasesComponent>(url).pipe(
+      tap(_ => console.log(`fetched cases id=${id}`)),
+      catchError(this.handleError<CasesComponent>(`getCasesById id=${id}`))
+    );
+  }
 }
