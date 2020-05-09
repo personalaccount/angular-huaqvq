@@ -6,7 +6,7 @@ import { LandingComponent } from './landing/landing.component';
 import { LoginComponent } from './login/login.component';
 
 import { CasesComponent } from './cases/cases.component';
-import { CaseDetailsComponent } from './case-details/case-details.component';
+import { CasesDetailsComponent } from './cases-details/cases-details.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
 import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
@@ -35,7 +35,7 @@ const routes: Routes = [
   },
   {
     path: 'cases-details/:id',
-    component: CaseDetailsComponent,
+    component: CasesDetailsComponent,
     data: { title: 'Cases Details' }
   },
   {

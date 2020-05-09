@@ -49,4 +49,21 @@ export class ApiService {
       catchError(this.handleError<CasesComponent>(`getCasesById id=${id}`))
     );
   }
+
+  addCases(cases: CasesComponent): Observable<CasesComponent> {
+    return this.http.post<CasesComponent>(apiUrl, cases, httpOptions).pipe(
+      tap((c: CasesComponent) => console.log(`added cases w/ id=${c.getCaseId()}`)),
+      catchError(this.handleError<CasesComponent>('addCases'))
+    );
+  }
+
+  updateCases(id: string, cases: CasesComponent): Observable<any> {
+    const url = `${apiUrl}/${id}`;
+
+    return this.http.put(url, cases, httpOptions).pipe(
+      tap(_ => console.log(`updated cases id=${id}`)),
+      catchError(this.handleError<any>('updateCases'))
+    );
+  }
+
 }

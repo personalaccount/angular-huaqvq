@@ -15,7 +15,7 @@ import { LandingComponent } from './landing/landing.component';
 import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CasesComponent } from './cases/cases.component';
-import { CaseDetailsComponent } from './case-details/case-details.component';
+import { CasesDetailsComponent } from './cases-details/cases-details.component';
 import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
@@ -29,7 +29,7 @@ import { CasesStatComponent } from './cases-stat/cases-stat.component';
     LoginComponent,
     DashboardComponent,
     CasesComponent,
-    CaseDetailsComponent,
+    CasesDetailsComponent,
     AddCasesComponent,
     EditCasesComponent,
     CasesStatComponent,

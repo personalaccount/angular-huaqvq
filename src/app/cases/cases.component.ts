@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cases.component.css']
 })
 export class CasesComponent implements OnInit {
+  private id: any;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
+  getCaseId() {
+    return this.id;
   }
-
+  ngOnInit(): void {}
 }
