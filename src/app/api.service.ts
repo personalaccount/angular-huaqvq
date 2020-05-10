@@ -52,7 +52,9 @@ export class ApiService {
 
   addCases(cases: CasesComponent): Observable<CasesComponent> {
     return this.http.post<CasesComponent>(apiUrl, cases, httpOptions).pipe(
-      tap((c: CasesComponent) => console.log(`added cases w/ id=${c.getCaseId()}`)),
+      tap((c: CasesComponent) =>
+        console.log(`added cases w/ id=${c.getCaseId()}`)
+      ),
       catchError(this.handleError<CasesComponent>('addCases'))
     );
   }
@@ -66,4 +68,21 @@ export class ApiService {
     );
   }
 
+  deleteCases(id: string): Observable<CasesComponent> {
+    const url = `${apiUrl}/${id}`;
+
+    return this.http.delete<CasesComponent>(url, httpOptions).pipe(
+      tap(_ => console.log(`deleted cases id=${id}`)),
+      catchError(this.handleError<CasesComponent>('deleteCases'))
+    );
+  }
+
+  getStatistic(status: string): Observable<Statistic> {
+    const url = `${apiUrl}/daily/${status}`;
+
+    return this.http.get<Statistic>(url).pipe(
+      tap(_ => console.log(`fetched statistic status=${status}`)),
+      catchError(this.handleError<Statistic>(`getStatistic status=${status}`))
+    );
+  }
 }
