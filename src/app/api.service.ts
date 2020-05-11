@@ -5,7 +5,7 @@ import {
   HttpErrorResponse
 } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
-import { CasesComponent } from './cases/cases.component';
+import { Cases } from './cases';
 import { Statistic } from './statistic';
 
 const httpOptions = {
@@ -34,32 +34,30 @@ export class ApiService {
     };
   }
 
-  getCases(): Observable<CasesComponent[]> {
-    return this.http.get<CasesComponent[]>(`${apiUrl}`).pipe(
+  getCases(): Observable<Cases[]> {
+    return this.http.get<Cases[]>(`${apiUrl}`).pipe(
       tap(cases => console.log('fetched cases')),
       catchError(this.handleError('getCases', []))
     );
   }
 
-  getCasesById(id: string): Observable<CasesComponent> {
+  getCasesById(id: string): Observable<Cases> {
     const url = `${apiUrl}/${id}`;
 
-    return this.http.get<CasesComponent>(url).pipe(
+    return this.http.get<Cases>(url).pipe(
       tap(_ => console.log(`fetched cases id=${id}`)),
-      catchError(this.handleError<CasesComponent>(`getCasesById id=${id}`))
+      catchError(this.handleError<Cases>(`getCasesById id=${id}`))
     );
   }
 
-  addCases(cases: CasesComponent): Observable<CasesComponent> {
-    return this.http.post<CasesComponent>(apiUrl, cases, httpOptions).pipe(
-      tap((c: CasesComponent) =>
-        console.log(`added cases w/ id=${c.getCaseId()}`)
-      ),
-      catchError(this.handleError<CasesComponent>('addCases'))
+  addCases(cases: Cases): Observable<Cases> {
+    return this.http.post<Cases>(apiUrl, cases, httpOptions).pipe(
+      tap((c: Cases) => console.log(`added cases w/ id=${c._id}`)),
+      catchError(this.handleError<Cases>('addCases'))
     );
   }
 
-  updateCases(id: string, cases: CasesComponent): Observable<any> {
+  updateCases(id: string, cases: Cases): Observable<any> {
     const url = `${apiUrl}/${id}`;
 
     return this.http.put(url, cases, httpOptions).pipe(
@@ -68,12 +66,12 @@ export class ApiService {
     );
   }
 
-  deleteCases(id: string): Observable<CasesComponent> {
+  deleteCases(id: string): Observable<Cases> {
     const url = `${apiUrl}/${id}`;
 
-    return this.http.delete<CasesComponent>(url, httpOptions).pipe(
+    return this.http.delete<Cases>(url, httpOptions).pipe(
       tap(_ => console.log(`deleted cases id=${id}`)),
-      catchError(this.handleError<CasesComponent>('deleteCases'))
+      catchError(this.handleError<Cases>('deleteCases'))
     );
   }
 

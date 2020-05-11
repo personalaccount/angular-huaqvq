@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
+import { Cases } from '../cases'
 
 @Component({
   selector: 'app-cases',
@@ -8,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class CasesComponent implements OnInit {
   private id: any;
 
-  constructor() {}
+  displayedColumns: string[] = ['name', 'age', 'status'];
+  data: Cases[] = [];
+  isLoadingResults = true;
+  constructor(private api: ApiService) {}
 
   getCaseId() {
     return this.id;
