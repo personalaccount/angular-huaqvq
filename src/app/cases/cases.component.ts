@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
-import { Cases } from '../cases'
+import { Cases } from '../cases';
 
 @Component({
   selector: 'app-cases',
@@ -8,15 +8,25 @@ import { Cases } from '../cases'
   styleUrls: ['./cases.component.css']
 })
 export class CasesComponent implements OnInit {
-  private id: any;
-
   displayedColumns: string[] = ['name', 'age', 'status'];
   data: Cases[] = [];
   isLoadingResults = true;
+
   constructor(private api: ApiService) {}
 
-  getCaseId() {
-    return this.id;
+  // ngOnInit(): void {}
+
+  ngOnInit(): void {
+    this.api.getCases().subscribe(
+      (res: any) => {
+        this.data = res;
+        console.log('Loaded cases: ' + this.data);
+        this.isLoadingResults = false;
+      },
+      err => {
+        console.log(err);
+        this.isLoadingResults = false;
+      }
+    );
   }
-  ngOnInit(): void {}
 }
