@@ -47,24 +47,24 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    // MatInputModule,
-    // MatPaginatorModule,
-    // MatProgressSpinnerModule,
-    // MatSortModule,
-    // MatTableModule,
-    // MatIconModule,
-    // MatButtonModule,
-    // MatCardModule,
-    // MatFormFieldModule,
-    // MatSliderModule,
-    // MatSlideToggleModule,
-    // MatButtonToggleModule,
-    // MatSelectModule,
-    // MatToolbarModule,
-    // MatMenuModule,
-    // MatListModule,
-    // MatGridListModule,
-    // BasicNavbarComponent
+    MatInputModule,
+    MatPaginatorModule,
+    MatProgressSpinnerModule,
+    MatSortModule,
+    MatTableModule,
+    MatIconModule,
+    MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatSliderModule,
+    MatSlideToggleModule,
+    MatButtonToggleModule,
+    MatSelectModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatListModule,
+    MatGridListModule,
+    BasicNavbarComponent
   ]
 })
 export class MaterialModule { }

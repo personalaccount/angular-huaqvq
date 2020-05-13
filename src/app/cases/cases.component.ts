@@ -7,6 +7,7 @@ import { Cases } from '../cases';
   templateUrl: './cases.component.html',
   styleUrls: ['./cases.component.css']
 })
+
 export class CasesComponent implements OnInit {
   displayedColumns: string[] = ['name', 'age', 'status'];
   data: Cases[] = [];
