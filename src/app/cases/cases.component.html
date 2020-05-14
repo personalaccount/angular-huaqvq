@@ -1,4 +1,4 @@
-<div class="example-container mat-elevation-z8">
+<div class="container mat-elevation-z8">
   <h2>Corona Virus Cases List</h2>
   <div class="example-loading-shade" *ngIf="isLoadingResults">
     <mat-spinner *ngIf="isLoadingResults"></mat-spinner>
@@ -8,7 +8,7 @@
     <a mat-flat-button color="accent" [routerLink]="['/cases-stat']"><mat-icon>bar_chart</mat-icon> Statistic</a>
   </div>
   <div class="mat-elevation-z8">
-    <table mat-table [dataSource]="data" class="example-table"
+    <table mat-table [dataSource]="data" class="table"
            matSort matSortActive="name" matSortDisableClear matSortDirection="asc">
 
       <!-- Cases Name Column -->
