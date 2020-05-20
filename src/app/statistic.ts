@@ -1,4 +1,4 @@
 export class Statistic {
-  private id: any;
+  id: any;
   count: number;
 }

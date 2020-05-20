@@ -20,6 +20,7 @@ import { AddCasesComponent } from './add-cases/add-cases.component';
 import { EditCasesComponent } from './edit-cases/edit-cases.component';
 import { CasesStatComponent } from './cases-stat/cases-stat.component';
 
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { CasesStatComponent } from './cases-stat/cases-stat.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
