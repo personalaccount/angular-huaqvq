@@ -11,7 +11,7 @@ import { Statistic } from '../statistic';
 })
 export class CasesStatComponent implements OnInit {
   stats: Statistic[] = [];
-  label = 'Positive';
+  label = 'Positive'; // Default value
   isLoadingResults = true;
   barChartOptions: ChartOptions = {
     responsive: true
@@ -69,6 +69,11 @@ export class CasesStatComponent implements OnInit {
         this.isLoadingResults = false;
       }
     );
+  }
+
+  changeStatus() {
+    this.isLoadingResults = true;
+    this.getStatistic(this.label);
   }
 
   ngOnInit(): void {
