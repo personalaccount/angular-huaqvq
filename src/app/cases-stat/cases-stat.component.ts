@@ -9,7 +9,6 @@ import { Statistic } from '../statistic';
   templateUrl: './cases-stat.component.html',
   styleUrls: ['./cases-stat.component.css']
 })
-
 export class CasesStatComponent implements OnInit {
   stats: Statistic[] = [];
   label = 'Positive';
@@ -72,5 +71,7 @@ export class CasesStatComponent implements OnInit {
     );
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getStatistic(this.label);
+  }
 }
