@@ -38,4 +38,18 @@ export class AddCasesComponent implements OnInit {
     });
   }
 
+  onFormSubmit() {
+    this.isLoadingResults = true;
+
+    this.api.addCases(this.casesForm.value)
+      .subscribe((res: any) => {
+        const id = res._id;
+        this.isLoadingResults = false;
+        this.router.navigate(['/cases-details', id]);
+      }, (err: any) => {
+        console.log(err);
+        this.isLoadingResults = false;
+      });
+  }
+
 }
