@@ -11,7 +11,21 @@ import { ErrorStateMatcher } from '@angular/material/core';
 })
 export class EditCasesComponent implements OnInit {
 
-  constructor() { }
+  casesForm: FormGroup;
+  id = '';
+  name = '';
+  gender = '';
+  age: number = null;
+  address = '';
+  city = '';
+  country = '';
+  status = '';
+  statusList = ['Positive', 'Dead', 'Recovered'];
+  genderList = ['Male', 'Female'];
+  isLoadingResults = false;
+  // matcher = new MyErrorStateMatcher();
+
+  constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
   }
