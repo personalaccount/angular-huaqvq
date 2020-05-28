@@ -28,6 +28,15 @@ export class EditCasesComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    this.getCasesById(this.route.snapshot.params.id);
+    this.casesForm = this.formBuilder.group({
+      name : [null, Validators.required],
+      gender : [null, Validators.required],
+      age : [null, Validators.required],
+      address : [null, Validators.required],
+      city : [null, Validators.required],
+      country : [null, Validators.required],
+      status : [null, Validators.required]
+    });
   }
-
 }
