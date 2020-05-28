@@ -39,4 +39,19 @@ export class EditCasesComponent implements OnInit {
       status : [null, Validators.required]
     });
   }
+
+  getCasesById(id: any) {
+    this.api.getCasesById(id).subscribe((data: any) => {
+      this._id = data._id;
+      this.casesForm.setValue({
+        name: data.name,
+        gender: data.gender,
+        age: data.age,
+        address: data.address,
+        city: data.city,
+        country: data.country,
+        status: data.status
+      });
+    });
+  }
 }
