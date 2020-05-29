@@ -29,6 +29,7 @@ export class EditCasesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCasesById(this.route.snapshot.params.id);
+
     this.casesForm = this.formBuilder.group({
       name : [null, Validators.required],
       gender : [null, Validators.required],
@@ -42,7 +43,7 @@ export class EditCasesComponent implements OnInit {
 
   getCasesById(id: any) {
     this.api.getCasesById(id).subscribe((data: any) => {
-      this._id = data._id;
+      this.id = data._id;
       this.casesForm.setValue({
         name: data.name,
         gender: data.gender,
@@ -53,5 +54,24 @@ export class EditCasesComponent implements OnInit {
         status: data.status
       });
     });
+  }
+
+  onFormSubmit() {
+    this.isLoadingResults = true;
+    this.api.updateCases(this.id, this.casesForm.value)
+      .subscribe((res: any) => {
+          const id = res._id;
+          this.isLoadingResults = false;
+          this.router.navigate(['/cases-details', id]);
+        }, (err: any) => {
+          console.log(err);
+          this.isLoadingResults = false;
+        }
+      );
+  }
+
+  // Show case details
+  casesDetails() {
+    this.router.navigate(['/cases-details', this.id]);
   }
 }
