@@ -31,7 +31,7 @@ export class EditCasesComponent implements OnInit {
   statusList = ['Positive', 'Dead', 'Recovered'];
   genderList = ['Male', 'Female'];
   isLoadingResults = false;
-  // matcher = new MyErrorStateMatcher();
+  matcher = new MyErrorStateMatcher();
 
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
