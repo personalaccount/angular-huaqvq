@@ -20,12 +20,10 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 
-import { BasicNavbarComponent } from './basic-navbar/basic-navbar.component';
-
 import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [BasicNavbarComponent],
+  declarations: [],
   imports: [
     MatInputModule,
     MatPaginatorModule,

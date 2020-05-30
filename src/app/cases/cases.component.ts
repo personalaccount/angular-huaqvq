@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Cases } from '../cases';
+// import {MaterialModule} from '../material.module';
 
 @Component({
   selector: 'app-cases',
